@@ -1,0 +1,122 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.brand-logo {
+  font-size: x-large !important;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.sidenav-trigger {
+  color: #26a69a;
+}
+
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+  padding-top: 0;
+}
+
+nav .brand-logo {
+  position: relative;
+}
+
+.landing-banner {
+  padding-top: 10%;
+  min-height: -webkit-fill-available;
+}
+
+@media only screen and (max-width : 600px) {
+  .landing-banner {
+    min-height: -webkit-fill-available;
+    padding-top: 5vh;
+  }
+}
+
+.landing-text {
+  word-wrap: break-word;
+  width: 50%;
+}
+
+@media only screen and (min-width: 600px) {
+  .landing-text {
+    word-wrap: break-word;
+    width: 75%;
+  }
+}
+
+.project-container {
+  width: 85%;
+  margin: auto;
+}
+
+.bg-text {
+  background-color: rgb(20,20,20); /* Fallback color */
+  background-color: rgba(20,20,20, 0.7); /* Black w/opacity/see-through */
+  padding: 5px 0;
+}
+
+.align-bot {
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+}
+
+.align-mid {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+}
+
+.scroll-chevron {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  margin-top: 5em;
+  bottom: 1em;
+}
+
+.no-uppercase {
+  text-transform: none;
+}
