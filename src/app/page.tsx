@@ -2,17 +2,30 @@ const EXPERIENCE = [
   {
     date: "2025",
     company: "VideoAmp",
-    role: "Data Engineer, Snowflake + Airflow ETL pipelines",
+    title: "Intermediate Data Engineer",
+    description:
+      "Built Snowflake and Airflow ETL pipelines powering daily reporting dashboards.",
   },
   {
-    date: "2022–25",
+    date: "2023–25",
     company: "Fincons · AppleTV+",
-    role: "SSOT metadata platform, GraphQL federation, Kafka",
+    title: "Software Engineer I",
+    description:
+      "Architected a Single-Source-of-Truth metadata platform across 7 systems, using GraphQL federation and Kafka pipelines handling 10k+ events a day.",
+  },
+  {
+    date: "2022–23",
+    company: "Fincons · AppleTV+",
+    title: "Associate Software Engineer",
+    description:
+      "Led development of a multi-tenant notification system and built a secure file attachment feature with versioning.",
   },
   {
     date: "2020",
     company: "3Diligent",
-    role: "Backend engineering intern, pricing + test automation",
+    title: "Backend Software Engineering Intern",
+    description:
+      "Built dynamic price estimation from historical purchase data and automated API test suites.",
   },
 ];
 
@@ -109,19 +122,24 @@ export default function Home() {
           <h2 className="mt-14 mb-5 text-xs tracking-wider text-muted uppercase">
             Experience
           </h2>
-          <div className="space-y-4">
+          <div className="space-y-5">
             {EXPERIENCE.map((job) => (
               <div
-                key={job.company}
+                key={`${job.company}-${job.title}`}
                 className="grid grid-cols-[7ch_1fr] gap-4 text-sm md:grid-cols-[9ch_1fr]"
               >
                 <span className="pt-0.5 text-[0.8rem] text-muted">
                   {job.date}
                 </span>
-                <p>
-                  <span className="font-semibold">{job.company}</span>{" "}
-                  <span className="text-muted">· {job.role}</span>
-                </p>
+                <div>
+                  <p>
+                    <span className="font-semibold">{job.company}</span>{" "}
+                    <span className="text-muted">· {job.title}</span>
+                  </p>
+                  <p className="mt-1 max-w-[52ch] text-[0.88rem] text-muted">
+                    {job.description}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -141,7 +159,7 @@ export default function Home() {
         </section>
 
         <footer className="mt-14 border-t border-border pt-6 text-xs text-muted">
-          Built with Next.js. Deployed on Vercel.
+          Built with Next.js.
         </footer>
       </div>
     </div>
