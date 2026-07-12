@@ -141,7 +141,7 @@ export default function Home() {
         </section>
 
         <footer className="mt-14 border-t border-border pt-6 text-xs text-muted">
-          Built with Next.js. Deployed on Vercel.
+          Built with Next.js.
         </footer>
       </div>
     </div>
