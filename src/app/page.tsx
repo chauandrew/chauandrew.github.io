@@ -1,65 +1,149 @@
-import Image from "next/image";
+const EXPERIENCE = [
+  {
+    date: "2025",
+    company: "VideoAmp",
+    role: "Data Engineer, Snowflake + Airflow ETL pipelines",
+  },
+  {
+    date: "2022–25",
+    company: "Fincons · AppleTV+",
+    role: "SSOT metadata platform, GraphQL federation, Kafka",
+  },
+  {
+    date: "2020",
+    company: "3Diligent",
+    role: "Backend engineering intern, pricing + test automation",
+  },
+];
+
+const ROOMFUL_TAGS = ["Next.js", "TypeScript", "Cloudflare Durable Objects", "Tailwind"];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
+    <div className="flex flex-1 justify-center">
+      <div className="flex w-full max-w-[860px] flex-1 flex-col px-6 py-12 md:px-8 md:py-16">
+        <header className="mb-8 flex flex-wrap items-center justify-between gap-4 text-sm font-semibold md:mb-10">
+          <span>Andrew Chau</span>
+          <nav className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-normal">
             <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="https://github.com/chauandrew"
+              className="text-muted hover:text-accent"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
+              GitHub
+            </a>
             <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="https://www.linkedin.com/in/chau-andrew/"
+              className="text-muted hover:text-accent"
             >
-              Learning
-            </a>{" "}
-            center.
+              LinkedIn
+            </a>
+            <a
+              href="mailto:andrewchau333@gmail.com"
+              className="text-muted hover:text-accent"
+            >
+              Email
+            </a>
+            <a
+              href="/andrew-chau-resume.pdf"
+              download
+              className="font-semibold text-accent"
+            >
+              Resume ↓
+            </a>
+          </nav>
+        </header>
+
+        <div className="mb-8 flex items-center gap-2 text-sm text-muted">
+          <span className="status-dot h-2 w-2 shrink-0 animate-[status-pulse_2.2s_infinite] rounded-full bg-accent" />
+          Open to backend and data roles. Just back from a year of humanitarian
+          work abroad.
+        </div>
+
+        <h1 className="mb-14 max-w-[34ch] text-balance text-[1.9rem] leading-[1.35] font-medium tracking-tight md:text-[2.3rem]">
+          I build backend systems and pipelines for work, and{" "}
+          <span className="text-accent">icebreaker games</span> that get a
+          room of strangers laughing.
+        </h1>
+
+        <section>
+          <h2 className="mb-5 text-xs tracking-wider text-muted uppercase">
+            Projects
+          </h2>
+          <div className="grid grid-cols-1 items-start gap-4 border-t border-border py-6 md:grid-cols-[1fr_auto]">
+            <div>
+              <h3 className="mb-2 text-lg font-semibold">Roomful</h3>
+              <p className="mb-3 max-w-[52ch] text-[0.92rem] text-muted">
+                Party games for a room full of people. A host projects the
+                lobby onto a screen, and players join from their phones with
+                a 4-letter code, no account needed. Each room lives on its
+                own tiny server that just disappears once everyone&apos;s
+                gone.
+              </p>
+              <div className="flex flex-wrap gap-x-1 text-[0.72rem] text-muted">
+                {ROOMFUL_TAGS.map((tag, i) => (
+                  <span key={tag}>
+                    {tag}
+                    {i < ROOMFUL_TAGS.length - 1 ? " · " : ""}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="flex shrink-0 gap-2 md:flex-col">
+              <a
+                href="https://roomful.vercel.app"
+                className="rounded-full border border-accent px-3 py-1.5 text-center text-sm whitespace-nowrap text-accent"
+              >
+                Live ↗
+              </a>
+              <a
+                href="https://github.com/chauandrew/roomful"
+                className="px-3 py-1.5 text-center text-sm whitespace-nowrap text-muted"
+              >
+                Code ↗
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="mt-14 mb-5 text-xs tracking-wider text-muted uppercase">
+            Experience
+          </h2>
+          <div className="space-y-4">
+            {EXPERIENCE.map((job) => (
+              <div
+                key={job.company}
+                className="grid grid-cols-[7ch_1fr] gap-4 text-sm md:grid-cols-[9ch_1fr]"
+              >
+                <span className="pt-0.5 text-[0.8rem] text-muted">
+                  {job.date}
+                </span>
+                <p>
+                  <span className="font-semibold">{job.company}</span>{" "}
+                  <span className="text-muted">· {job.role}</span>
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <h2 className="mt-14 mb-5 text-xs tracking-wider text-muted uppercase">
+            About
+          </h2>
+          <p className="max-w-[58ch] text-[0.92rem] leading-relaxed text-muted">
+            UCLA CS, 2021. Outside of shipping code I{" "}
+            <span className="text-accent">boulder</span> (stuck at v6-7 for
+            now), bake more than one person should really eat alone, and
+            host game nights for 50+ college and high school students. That
+            last one is basically how Roomful started.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+        </section>
+
+        <footer className="mt-14 border-t border-border pt-6 text-xs text-muted">
+          Built with Next.js. Deployed on Vercel.
+        </footer>
+      </div>
     </div>
   );
 }
