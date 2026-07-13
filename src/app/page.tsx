@@ -29,7 +29,27 @@ const EXPERIENCE = [
   },
 ];
 
-const ROOMFUL_TAGS = ["Next.js", "TypeScript", "Cloudflare Durable Objects", "Tailwind"];
+const PROJECTS = [
+  {
+    name: "Roomful",
+    description:
+      "Party games for a room full of people. A host projects the lobby onto a screen, and players join from their phones with a 4-letter code, no account needed. Each room lives on its own tiny server that just disappears once everyone's gone.",
+    tags: ["Next.js", "TypeScript", "Cloudflare Durable Objects", "Tailwind"],
+    live: "https://roomful.vercel.app",
+    code: "https://github.com/chauandrew/roomful",
+    curriculum: null,
+  },
+  {
+    name: "nghe-di",
+    description:
+      "I'm teaching myself Vietnamese, so I built the course I wished existed. Claude writes the curriculum and dialogues, ElevenLabs voices them, and structured, audio-first lessons come out the other end.",
+    tags: ["Python", "Claude API", "ElevenLabs"],
+    live: null,
+    code: "https://github.com/chauandrew/nghe-di",
+    curriculum:
+      "https://github.com/chauandrew/nghe-di/blob/main/docs/curriculum-units-2-5.md",
+  },
+];
 
 export default function Home() {
   return (
@@ -82,40 +102,52 @@ export default function Home() {
           <h2 className="mb-5 text-xs tracking-wider text-muted uppercase">
             Projects
           </h2>
-          <div className="grid grid-cols-1 items-start gap-4 border-t border-border py-6 md:grid-cols-[1fr_auto]">
-            <div>
-              <h3 className="mb-2 text-lg font-semibold">Roomful</h3>
-              <p className="mb-3 max-w-[52ch] text-[0.92rem] text-muted">
-                Party games for a room full of people. A host projects the
-                lobby onto a screen, and players join from their phones with
-                a 4-letter code, no account needed. Each room lives on its
-                own tiny server that just disappears once everyone&apos;s
-                gone.
-              </p>
-              <div className="flex flex-wrap gap-x-1 text-[0.72rem] text-muted">
-                {ROOMFUL_TAGS.map((tag, i) => (
-                  <span key={tag}>
-                    {tag}
-                    {i < ROOMFUL_TAGS.length - 1 ? " · " : ""}
-                  </span>
-                ))}
+          {PROJECTS.map((project) => (
+            <div
+              key={project.name}
+              className="grid grid-cols-1 items-start gap-4 border-t border-border py-6 md:grid-cols-[1fr_auto]"
+            >
+              <div>
+                <h3 className="mb-2 text-lg font-semibold">{project.name}</h3>
+                <p className="mb-3 max-w-[52ch] text-[0.92rem] text-muted">
+                  {project.description}
+                </p>
+                {project.curriculum && (
+                  <p className="mb-3 max-w-[52ch] text-[0.92rem] text-muted">
+                    No live demo yet, so here&apos;s the{" "}
+                    <a href={project.curriculum} className="text-accent">
+                      lesson curriculum
+                    </a>{" "}
+                    instead, to show the design thinking behind it.
+                  </p>
+                )}
+                <div className="flex flex-wrap gap-x-1 text-[0.72rem] text-muted">
+                  {project.tags.map((tag, i) => (
+                    <span key={tag}>
+                      {tag}
+                      {i < project.tags.length - 1 ? " · " : ""}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="flex shrink-0 gap-2 md:flex-col">
+                {project.live && (
+                  <a
+                    href={project.live}
+                    className="rounded-full border border-accent px-3 py-1.5 text-center text-sm whitespace-nowrap text-accent"
+                  >
+                    Live ↗
+                  </a>
+                )}
+                <a
+                  href={project.code}
+                  className="px-3 py-1.5 text-center text-sm whitespace-nowrap text-muted"
+                >
+                  Code ↗
+                </a>
               </div>
             </div>
-            <div className="flex shrink-0 gap-2 md:flex-col">
-              <a
-                href="https://roomful.vercel.app"
-                className="rounded-full border border-accent px-3 py-1.5 text-center text-sm whitespace-nowrap text-accent"
-              >
-                Live ↗
-              </a>
-              <a
-                href="https://github.com/chauandrew/roomful"
-                className="px-3 py-1.5 text-center text-sm whitespace-nowrap text-muted"
-              >
-                Code ↗
-              </a>
-            </div>
-          </div>
+          ))}
         </section>
 
         <section>
