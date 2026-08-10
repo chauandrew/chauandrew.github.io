@@ -56,10 +56,10 @@ const PROJECTS = [
     description:
       "A Chrome extension that blocks images and mutes video by default, everywhere, for faster, distraction-free browsing. Blocks at the network level before bytes download, with one-click per-site exceptions.",
     tags: ["JavaScript", "Chrome Extension", "declarativeNetRequest"],
-    live: null,
+    live: "https://chromewebstore.google.com/detail/gray/gbfmmamcnlcidhdihbljlpahlbgcncof",
     code: "https://github.com/chauandrew/gray",
     curriculum: null,
-    note: "Pending Chrome Web Store review, code is ready, listing isn't live yet.",
+    note: null,
   },
 ];
 
