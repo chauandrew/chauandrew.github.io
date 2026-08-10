@@ -27,6 +27,29 @@ const EXPERIENCE = [
     description:
       "Built dynamic price estimation from historical purchase data and automated API test suites.",
   },
+  {
+    date: "2019",
+    company: "SAS",
+    title: "Technical Intern",
+    description:
+      "Built a Bash and Python test automation suite to ensure integrity of SAS Cybersecurity's data processing.",
+  },
+  {
+    date: "2018",
+    company: "SuperMoney",
+    title: "Engineering Intern",
+    description:
+      "Built a full-stack framework for product comparison pages, matching users to rated companies and financial quotes.",
+  },
+];
+
+const EDUCATION = [
+  {
+    date: "2021",
+    school: "UCLA",
+    degree: "B.S. Computer Science",
+    description: "3.72 GPA.",
+  },
 ];
 
 const SKILLS = [
@@ -176,6 +199,33 @@ export default function Home() {
 
         <section>
           <h2 className="mt-14 mb-5 text-xs tracking-wider text-muted uppercase">
+            Education
+          </h2>
+          <div className="space-y-5">
+            {EDUCATION.map((school) => (
+              <div
+                key={school.school}
+                className="grid grid-cols-[7ch_1fr] gap-4 text-sm md:grid-cols-[9ch_1fr]"
+              >
+                <span className="pt-0.5 text-[0.8rem] text-muted">
+                  {school.date}
+                </span>
+                <div>
+                  <p>
+                    <span className="font-semibold">{school.school}</span>{" "}
+                    <span className="text-muted">· {school.degree}</span>
+                  </p>
+                  <p className="mt-1 max-w-[52ch] text-[0.88rem] text-muted">
+                    {school.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <h2 className="mt-14 mb-5 text-xs tracking-wider text-muted uppercase">
             Experience
           </h2>
           <div className="space-y-5">
@@ -227,8 +277,8 @@ export default function Home() {
             About
           </h2>
           <p className="max-w-[58ch] text-[0.92rem] leading-relaxed text-muted">
-            UCLA CS, 2021. Based in Irvine, CA, open to hybrid or remote.
-            Outside of shipping code I{" "}
+            Based in Irvine, CA, open to hybrid or remote. Outside of
+            shipping code I{" "}
             <span className="text-accent">boulder</span> (stuck at v6-7 for
             now), bake more than one person should really eat alone, and
             host game nights for 50+ college and high school students. That
