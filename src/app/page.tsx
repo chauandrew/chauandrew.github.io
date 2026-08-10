@@ -38,6 +38,7 @@ const PROJECTS = [
     live: "https://roomful.vercel.app",
     code: "https://github.com/chauandrew/roomful",
     curriculum: null,
+    note: null,
   },
   {
     name: "nghe-di",
@@ -48,6 +49,17 @@ const PROJECTS = [
     code: "https://github.com/chauandrew/nghe-di",
     curriculum:
       "https://github.com/chauandrew/nghe-di/blob/main/docs/curriculum-units-2-5.md",
+    note: null,
+  },
+  {
+    name: "Gray",
+    description:
+      "A Chrome extension that blocks images and mutes video by default, everywhere, for faster, distraction-free browsing. Blocks at the network level before bytes download, with one-click per-site exceptions.",
+    tags: ["JavaScript", "Chrome Extension", "declarativeNetRequest"],
+    live: "https://chromewebstore.google.com/detail/gray/gbfmmamcnlcidhdihbljlpahlbgcncof",
+    code: "https://github.com/chauandrew/gray",
+    curriculum: null,
+    note: null,
   },
 ];
 
@@ -119,6 +131,11 @@ export default function Home() {
                       lesson curriculum
                     </a>{" "}
                     instead, to show the design thinking behind it.
+                  </p>
+                )}
+                {project.note && (
+                  <p className="mb-3 max-w-[52ch] text-[0.92rem] text-muted">
+                    {project.note}
                   </p>
                 )}
                 <div className="flex flex-wrap gap-x-1 text-[0.72rem] text-muted">
