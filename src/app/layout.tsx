@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description:
     "Backend and data engineer building pipelines and real-time systems, plus icebreaker games on the side.",
   verification: {
-    google: "AtI-dEcZhDILaY5LnU3n-ylOZUYI_A5aAgXKMHRPiGQv", // Paste ONLY the token string here, not the whole tag
+    google: "AtI-dEcZhDILaY5LnU3n-ylOZUYI_A5aAgXKMHRPiGQ", 
   },
 };
 
