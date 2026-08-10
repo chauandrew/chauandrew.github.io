@@ -24,9 +24,36 @@ const EXPERIENCE = [
     date: "2020",
     company: "3Diligent",
     title: "Backend Software Engineering Intern",
-    description:
-      "Built dynamic price estimation from historical purchase data and automated API test suites.",
+    description: null,
   },
+  {
+    date: "2019",
+    company: "SAS",
+    title: "Technical Intern",
+    description: null,
+  },
+  {
+    date: "2018",
+    company: "SuperMoney",
+    title: "Engineering Intern",
+    description: null,
+  },
+];
+
+const EDUCATION = [
+  {
+    date: "2021",
+    school: "UCLA",
+    degree: "B.S. Computer Science",
+    description: "3.72 GPA.",
+  },
+];
+
+const SKILLS = [
+  { label: "Languages", items: ["Java", "TypeScript", "JavaScript", "SQL", "Python", "Go"] },
+  { label: "Backend", items: ["Node.js", "Spring Boot", "Kafka", "GraphQL (Apollo Federation)"] },
+  { label: "Data", items: ["Snowflake", "Airflow", "PostgreSQL", "MongoDB", "OracleDB"] },
+  { label: "Frontend", items: ["Vue", "React"] },
 ];
 
 const PROJECTS = [
@@ -100,8 +127,8 @@ export default function Home() {
 
         <div className="mb-8 flex items-center gap-2 text-sm text-muted">
           <span className="status-dot h-2 w-2 shrink-0 animate-[status-pulse_2.2s_infinite] rounded-full bg-accent" />
-          Open to backend and data roles. Just back from a year of humanitarian
-          work abroad.
+          Open to backend and data roles. Just back from a year
+          of humanitarian work abroad.
         </div>
 
         <h1 className="mb-14 max-w-[34ch] text-balance text-[1.9rem] leading-[1.35] font-medium tracking-tight md:text-[2.3rem]">
@@ -169,6 +196,33 @@ export default function Home() {
 
         <section>
           <h2 className="mt-14 mb-5 text-xs tracking-wider text-muted uppercase">
+            Education
+          </h2>
+          <div className="space-y-5">
+            {EDUCATION.map((school) => (
+              <div
+                key={school.school}
+                className="grid grid-cols-[7ch_1fr] gap-4 text-sm md:grid-cols-[9ch_1fr]"
+              >
+                <span className="pt-0.5 text-[0.8rem] text-muted">
+                  {school.date}
+                </span>
+                <div>
+                  <p>
+                    <span className="font-semibold">{school.school}</span>{" "}
+                    <span className="text-muted">· {school.degree}</span>
+                  </p>
+                  <p className="mt-1 max-w-[52ch] text-[0.88rem] text-muted">
+                    {school.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <h2 className="mt-14 mb-5 text-xs tracking-wider text-muted uppercase">
             Experience
           </h2>
           <div className="space-y-5">
@@ -185,10 +239,33 @@ export default function Home() {
                     <span className="font-semibold">{job.company}</span>{" "}
                     <span className="text-muted">· {job.title}</span>
                   </p>
-                  <p className="mt-1 max-w-[52ch] text-[0.88rem] text-muted">
-                    {job.description}
-                  </p>
+                  {job.description && (
+                    <p className="mt-1 max-w-[52ch] text-[0.88rem] text-muted">
+                      {job.description}
+                    </p>
+                  )}
                 </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <h2 className="mt-14 mb-5 text-xs tracking-wider text-muted uppercase">
+            Skills
+          </h2>
+          <div className="space-y-2">
+            {SKILLS.map((group) => (
+              <div
+                key={group.label}
+                className="grid grid-cols-[7ch_1fr] gap-4 text-sm md:grid-cols-[9ch_1fr]"
+              >
+                <span className="pt-0.5 text-[0.8rem] text-muted">
+                  {group.label}
+                </span>
+                <p className="text-[0.88rem] text-muted">
+                  {group.items.join(" · ")}
+                </p>
               </div>
             ))}
           </div>
@@ -199,8 +276,8 @@ export default function Home() {
             About
           </h2>
           <p className="max-w-[58ch] text-[0.92rem] leading-relaxed text-muted">
-            UCLA CS, 2021. Outside of shipping code I{" "}
-            <span className="text-accent">boulder</span> (stuck at v6-7 for
+            Based in Irvine, CA, open to hybrid or remote. Outside of
+            shipping code I boulder (stuck at v6-7 for
             now), bake more than one person should really eat alone, and
             host game nights for 50+ college and high school students. That
             last one is basically how Roomful started.

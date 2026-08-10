@@ -12,12 +12,28 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const title = "Andrew Chau";
+const description =
+  "Backend and data engineer building pipelines and real-time systems, plus icebreaker games on the side.";
+const url = "https://chauandrew.github.io";
+
 export const metadata: Metadata = {
-  title: "Andrew Chau",
-  description:
-    "Backend and data engineer building pipelines and real-time systems, plus icebreaker games on the side.",
+  title,
+  description,
   verification: {
-    google: "AtI-dEcZhDILaY5LnU3n-ylOZUYI_A5aAgXKMHRPiGQ", 
+    google: "AtI-dEcZhDILaY5LnU3n-ylOZUYI_A5aAgXKMHRPiGQ",
+  },
+  openGraph: {
+    title,
+    description,
+    url,
+    siteName: title,
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title,
+    description,
   },
 };
 
