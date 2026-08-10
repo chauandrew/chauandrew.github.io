@@ -127,7 +127,7 @@ export default function Home() {
 
         <div className="mb-8 flex items-center gap-2 text-sm text-muted">
           <span className="status-dot h-2 w-2 shrink-0 animate-[status-pulse_2.2s_infinite] rounded-full bg-accent" />
-          Open to backend, data, and full-stack roles. Just back from a year
+          Open to backend and data roles. Just back from a year
           of humanitarian work abroad.
         </div>
 

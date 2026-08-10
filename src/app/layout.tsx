@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 const title = "Andrew Chau";
 const description =
-  "Backend, data, and full-stack engineer building pipelines and real-time systems, plus icebreaker games on the side.";
+  "Backend and data engineer building pipelines and real-time systems, plus icebreaker games on the side.";
 const url = "https://chauandrew.github.io";
 
 export const metadata: Metadata = {
