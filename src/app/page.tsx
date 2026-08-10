@@ -24,22 +24,19 @@ const EXPERIENCE = [
     date: "2020",
     company: "3Diligent",
     title: "Backend Software Engineering Intern",
-    description:
-      "Built dynamic price estimation from historical purchase data and automated API test suites.",
+    description: null,
   },
   {
     date: "2019",
     company: "SAS",
     title: "Technical Intern",
-    description:
-      "Built a Bash and Python test automation suite to ensure integrity of SAS Cybersecurity's data processing.",
+    description: null,
   },
   {
     date: "2018",
     company: "SuperMoney",
     title: "Engineering Intern",
-    description:
-      "Built a full-stack framework for product comparison pages, matching users to rated companies and financial quotes.",
+    description: null,
   },
 ];
 
@@ -242,9 +239,11 @@ export default function Home() {
                     <span className="font-semibold">{job.company}</span>{" "}
                     <span className="text-muted">· {job.title}</span>
                   </p>
-                  <p className="mt-1 max-w-[52ch] text-[0.88rem] text-muted">
-                    {job.description}
-                  </p>
+                  {job.description && (
+                    <p className="mt-1 max-w-[52ch] text-[0.88rem] text-muted">
+                      {job.description}
+                    </p>
+                  )}
                 </div>
               </div>
             ))}
@@ -278,8 +277,7 @@ export default function Home() {
           </h2>
           <p className="max-w-[58ch] text-[0.92rem] leading-relaxed text-muted">
             Based in Irvine, CA, open to hybrid or remote. Outside of
-            shipping code I{" "}
-            <span className="text-accent">boulder</span> (stuck at v6-7 for
+            shipping code I boulder (stuck at v6-7 for
             now), bake more than one person should really eat alone, and
             host game nights for 50+ college and high school students. That
             last one is basically how Roomful started.
