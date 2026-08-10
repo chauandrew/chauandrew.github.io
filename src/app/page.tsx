@@ -29,6 +29,13 @@ const EXPERIENCE = [
   },
 ];
 
+const SKILLS = [
+  { label: "Languages", items: ["Java", "TypeScript", "JavaScript", "SQL", "Python", "Go"] },
+  { label: "Backend", items: ["Node.js", "Spring Boot", "Kafka", "GraphQL (Apollo Federation)"] },
+  { label: "Data", items: ["Snowflake", "Airflow", "PostgreSQL", "MongoDB", "OracleDB"] },
+  { label: "Frontend", items: ["Vue", "React"] },
+];
+
 const PROJECTS = [
   {
     name: "Roomful",
@@ -100,8 +107,8 @@ export default function Home() {
 
         <div className="mb-8 flex items-center gap-2 text-sm text-muted">
           <span className="status-dot h-2 w-2 shrink-0 animate-[status-pulse_2.2s_infinite] rounded-full bg-accent" />
-          Open to backend and data roles. Just back from a year of humanitarian
-          work abroad.
+          Open to backend, data, and full-stack roles. Just back from a year
+          of humanitarian work abroad.
         </div>
 
         <h1 className="mb-14 max-w-[34ch] text-balance text-[1.9rem] leading-[1.35] font-medium tracking-tight md:text-[2.3rem]">
@@ -196,10 +203,32 @@ export default function Home() {
 
         <section>
           <h2 className="mt-14 mb-5 text-xs tracking-wider text-muted uppercase">
+            Skills
+          </h2>
+          <div className="space-y-2">
+            {SKILLS.map((group) => (
+              <div
+                key={group.label}
+                className="grid grid-cols-[7ch_1fr] gap-4 text-sm md:grid-cols-[9ch_1fr]"
+              >
+                <span className="pt-0.5 text-[0.8rem] text-muted">
+                  {group.label}
+                </span>
+                <p className="text-[0.88rem] text-muted">
+                  {group.items.join(" · ")}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <h2 className="mt-14 mb-5 text-xs tracking-wider text-muted uppercase">
             About
           </h2>
           <p className="max-w-[58ch] text-[0.92rem] leading-relaxed text-muted">
-            UCLA CS, 2021. Outside of shipping code I{" "}
+            UCLA CS, 2021. Based in Irvine, CA, open to hybrid or remote.
+            Outside of shipping code I{" "}
             <span className="text-accent">boulder</span> (stuck at v6-7 for
             now), bake more than one person should really eat alone, and
             host game nights for 50+ college and high school students. That
