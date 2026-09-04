@@ -1,3 +1,5 @@
+import { ChessSection } from "@/components/chess/ChessSection";
+
 const EXPERIENCE = [
   {
     date: "2025",
@@ -136,6 +138,10 @@ export default function Home() {
           <span className="text-accent">icebreaker games</span> that get a
           room of strangers laughing.
         </h1>
+
+        <div className="mb-14">
+          <ChessSection />
+        </div>
 
         <section>
           <h2 className="mb-5 text-xs tracking-wider text-muted uppercase">
