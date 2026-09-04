@@ -26,9 +26,7 @@ jobs:
       - run: npm ci
       - run: npm run build
         env:
-          # TODO: replace with the real host after `npm run deploy:party`
-          # (see wrangler deploy output, looks like <name>.<subdomain>.workers.dev)
-          NEXT_PUBLIC_CHESS_HOST: portfolio-chess.example.workers.dev
+          NEXT_PUBLIC_CHESS_HOST: portfolio-chess.andrewchau333.workers.dev
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
