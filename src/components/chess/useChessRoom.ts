@@ -8,6 +8,7 @@ export type ChessView = {
   type: "sync";
   fen: string;
   turn: "w" | "b";
+  moveCount: number;
   gameOver: boolean;
   isCheckmate: boolean;
   isStalemate: boolean;

@@ -51,9 +51,9 @@ export class ChessServer extends Server<Env> {
     }
 
     if (msg.type === "reset") {
-      if (!this.chess.isGameOver()) {
+      if (!this.chess.isGameOver() && this.chess.history().length < 10) {
         sender.send(
-          JSON.stringify({ type: "error", message: "Game still in progress" })
+          JSON.stringify({ type: "error", message: "Play at least 10 moves before resetting" })
         );
         return;
       }
@@ -68,6 +68,7 @@ export class ChessServer extends Server<Env> {
       type: "sync" as const,
       fen: this.chess.fen(),
       turn: this.chess.turn(),
+      moveCount: this.chess.history().length,
       gameOver: this.chess.isGameOver(),
       isCheckmate: this.chess.isCheckmate(),
       isStalemate: this.chess.isStalemate(),
