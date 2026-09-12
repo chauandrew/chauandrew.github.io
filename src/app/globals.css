@@ -6,6 +6,8 @@
   --muted: #8c897c;
   --accent: #245842;
   --border: #e9e4d6;
+  --board-light: #fbf8f1;
+  --board-dark: #8ba695;
 }
 
 @theme inline {
@@ -25,6 +27,8 @@
     --muted: #9b978a;
     --accent: #4fae86;
     --border: #2b2a21;
+    --board-light: #3a382e;
+    --board-dark: #3f6b54;
   }
 }
 

@@ -102,11 +102,8 @@ export default function ChessBoardImpl() {
               position: view?.fen ?? START_FEN,
               allowDragging: !frozen,
               squareStyles,
-              lightSquareStyle: { backgroundColor: "var(--background)" },
-              darkSquareStyle: {
-                backgroundColor:
-                  "color-mix(in srgb, var(--accent) 55%, var(--background))",
-              },
+              lightSquareStyle: { backgroundColor: "var(--board-light)" },
+              darkSquareStyle: { backgroundColor: "var(--board-dark)" },
               alphaNotationStyle: { color: "var(--muted)" },
               numericNotationStyle: { color: "var(--muted)" },
               onPieceDrag: ({ square }) => {
