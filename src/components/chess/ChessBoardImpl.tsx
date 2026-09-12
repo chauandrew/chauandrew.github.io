@@ -74,6 +74,8 @@ export default function ChessBoardImpl() {
     }
   }
 
+  const canReset = view !== null && (view.gameOver || view.moveCount >= 10);
+
   const squareStyles: Record<string, React.CSSProperties> = {};
   if (selected) {
     squareStyles[selected] = {
@@ -90,13 +92,9 @@ export default function ChessBoardImpl() {
 
   return (
     <section>
-      <h2 className="mb-5 text-xs tracking-wider text-muted uppercase">
-        Live Chess
+      <h2 className="mb-4 text-xs tracking-wider text-muted uppercase">
+        Live Chess: {statusText}
       </h2>
-      <p className="mb-4 max-w-[52ch] text-[0.92rem] text-muted">
-        One shared board, played one move at a time by whoever visits. Take a
-        turn.
-      </p>
       <div className="max-w-[420px]">
         <div className="overflow-hidden rounded-sm border border-border">
           <Chessboard
@@ -107,7 +105,7 @@ export default function ChessBoardImpl() {
               lightSquareStyle: { backgroundColor: "var(--background)" },
               darkSquareStyle: {
                 backgroundColor:
-                  "color-mix(in srgb, var(--accent) 20%, var(--background))",
+                  "color-mix(in srgb, var(--accent) 55%, var(--background))",
               },
               alphaNotationStyle: { color: "var(--muted)" },
               numericNotationStyle: { color: "var(--muted)" },
@@ -129,17 +127,16 @@ export default function ChessBoardImpl() {
             }}
           />
         </div>
-        <div className="mt-3 flex items-center justify-between text-sm text-muted">
-          <span>{statusText}</span>
-          {view?.gameOver && (
+        {canReset && (
+          <div className="mt-3 flex justify-end">
             <button
               onClick={reset}
-              className="rounded-full border border-accent px-3 py-1 text-accent"
+              className="rounded-full border border-accent px-3 py-1 text-sm text-accent"
             >
-              New game
+              Reset board
             </button>
-          )}
-        </div>
+          </div>
+        )}
         {error && <p className="mt-2 text-[0.8rem] text-muted">{error}</p>}
       </div>
     </section>
