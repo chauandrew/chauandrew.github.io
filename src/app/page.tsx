@@ -1,6 +1,23 @@
 import { ChessSection } from "@/components/chess/ChessSection";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
+function SectionHeading({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <div className={`mb-5 flex items-center gap-2 ${className}`}>
+      <span className="h-3.5 w-[3px] shrink-0 rounded-sm bg-accent" />
+      <h2 className="text-xs font-semibold tracking-wider text-foreground uppercase">
+        {children}
+      </h2>
+    </div>
+  );
+}
+
 const EXPERIENCE = [
   {
     date: "2025",
@@ -146,9 +163,7 @@ export default function Home() {
         </div>
 
         <section>
-          <h2 className="mb-5 text-xs tracking-wider text-muted uppercase">
-            Projects
-          </h2>
+          <SectionHeading>Projects</SectionHeading>
           {PROJECTS.map((project) => (
             <div
               key={project.name}
@@ -203,9 +218,7 @@ export default function Home() {
         </section>
 
         <section>
-          <h2 className="mt-14 mb-5 text-xs tracking-wider text-muted uppercase">
-            Education
-          </h2>
+          <SectionHeading className="mt-14">Education</SectionHeading>
           <div className="space-y-5">
             {EDUCATION.map((school) => (
               <div
@@ -230,9 +243,7 @@ export default function Home() {
         </section>
 
         <section>
-          <h2 className="mt-14 mb-5 text-xs tracking-wider text-muted uppercase">
-            Experience
-          </h2>
+          <SectionHeading className="mt-14">Experience</SectionHeading>
           <div className="space-y-5">
             {EXPERIENCE.map((job) => (
               <div
@@ -259,9 +270,7 @@ export default function Home() {
         </section>
 
         <section>
-          <h2 className="mt-14 mb-5 text-xs tracking-wider text-muted uppercase">
-            Skills
-          </h2>
+          <SectionHeading className="mt-14">Skills</SectionHeading>
           <div className="space-y-2">
             {SKILLS.map((group) => (
               <div
@@ -280,9 +289,7 @@ export default function Home() {
         </section>
 
         <section>
-          <h2 className="mt-14 mb-5 text-xs tracking-wider text-muted uppercase">
-            About
-          </h2>
+          <SectionHeading className="mt-14">About</SectionHeading>
           <p className="max-w-[58ch] text-[0.92rem] leading-relaxed text-muted">
             Based in Irvine, CA, open to hybrid or remote. Outside of
             shipping code I boulder (stuck at v6-7 for
