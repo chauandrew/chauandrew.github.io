@@ -146,13 +146,7 @@ export default function Home() {
           </nav>
         </header>
 
-        <div className="mb-8 flex items-center gap-2 text-sm text-muted">
-          <span className="status-dot h-2 w-2 shrink-0 animate-[status-pulse_2.2s_infinite] rounded-full bg-accent" />
-          Open to backend and data roles. Just back from a year
-          of humanitarian work abroad.
-        </div>
-
-        <h1 className="mb-14 max-w-[34ch] text-balance text-[1.9rem] leading-[1.35] font-medium tracking-tight md:text-[2.3rem]">
+        <h1 className="mt-8 mb-14 max-w-[34ch] text-balance text-[1.9rem] leading-[1.35] font-medium tracking-tight md:text-[2.3rem]">
           I build backend systems and pipelines for work, and{" "}
           <span className="text-accent">icebreaker games</span> that get a
           room of strangers laughing.

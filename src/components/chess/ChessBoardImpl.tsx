@@ -92,7 +92,8 @@ export default function ChessBoardImpl() {
 
   return (
     <section>
-      <h2 className="mb-4 text-xs tracking-wider text-muted uppercase">
+      <h2 className="mb-4 flex items-center gap-2 text-xs tracking-wider text-muted uppercase">
+        <span className="status-dot h-2 w-2 shrink-0 animate-[status-pulse_2.2s_infinite] rounded-full bg-accent" />
         Live Chess: {statusText}
       </h2>
       <div className="max-w-[420px]">
