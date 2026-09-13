@@ -1,4 +1,5 @@
 import { ChessSection } from "@/components/chess/ChessSection";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const EXPERIENCE = [
   {
@@ -124,6 +125,7 @@ export default function Home() {
             >
               Resume ↓
             </a>
+            <ThemeToggle />
           </nav>
         </header>
 
